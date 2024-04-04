@@ -1,0 +1,222 @@
+[gd_scene load_steps=10 format=3 uid="uid://sf65o3and8og"]
+
+[ext_resource type="Script" path="res://scripts/UI.gd" id="1_fe6s4"]
+[ext_resource type="FontFile" uid="uid://dmqhj8cthxokk" path="res://fonts/prstartk.ttf" id="2_bmbbd"]
+[ext_resource type="FontFile" uid="uid://e0q8gkg5gvux" path="res://fonts/Pabricks-MVKlY.ttf" id="2_gxnlu"]
+[ext_resource type="FontFile" uid="uid://bx342cgvu81xp" path="res://fonts/Ryzes-ax92x.ttf" id="3_hn0bu"]
+[ext_resource type="VideoStream" path="res://wallpapers/retrowave-sun-moewalls-com.ogv" id="5_6ep0o"]
+[ext_resource type="FontFile" uid="uid://c65sn6h8omxwy" path="res://fonts/prstart.ttf" id="6_3lopq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_flvmp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_og380"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hpo80"]
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_fe6s4")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -544.0
+offset_right = 960.0
+offset_bottom = 544.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("5_6ep0o")
+autoplay = true
+loop = true
+
+[node name="Title_And_Buttons" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Title_And_Buttons"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -237.5
+offset_right = 237.5
+offset_bottom = 397.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="Title_And_Buttons/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 30
+
+[node name="play_button" type="Button" parent="Title_And_Buttons/VBoxContainer/MarginContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_focus_color = Color(1, 1, 0.815686, 1)
+theme_override_fonts/font = ExtResource("2_bmbbd")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_flvmp")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_og380")
+text = "PLAY"
+
+[node name="MarginContainer" type="MarginContainer" parent="Title_And_Buttons/VBoxContainer"]
+layout_mode = 2
+
+[node name="quit_button" type="Button" parent="Title_And_Buttons/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_focus_color = Color(1, 1, 0.815686, 1)
+theme_override_fonts/font = ExtResource("2_bmbbd")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_flvmp")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hpo80")
+text = "QUIT"
+
+[node name="Score_Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MarginContainer2" type="MarginContainer" parent="Score_Control"]
+layout_mode = 2
+offset_right = 63.0
+offset_bottom = 69.0
+size_flags_horizontal = 0
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Score_Control/MarginContainer2"]
+layout_mode = 2
+
+[node name="score_text" type="Label" parent="Score_Control/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(0.733333, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_3lopq")
+theme_override_font_sizes/font_size = 22
+text = "Score"
+uppercase = true
+
+[node name="score_val" type="Label" parent="Score_Control/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_3lopq")
+theme_override_font_sizes/font_size = 22
+text = "0000"
+
+[node name="Score_Control2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+grow_horizontal = 0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="MarginContainer2" type="MarginContainer" parent="Score_Control2"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -170.0
+offset_bottom = 137.0
+grow_horizontal = 0
+size_flags_horizontal = 0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Score_Control2/MarginContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Score_Control2/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.733333, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_3lopq")
+theme_override_font_sizes/font_size = 22
+text = "HIGH"
+horizontal_alignment = 2
+
+[node name="score_text" type="Label" parent="Score_Control2/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(0.733333, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_3lopq")
+theme_override_font_sizes/font_size = 22
+text = "Score"
+horizontal_alignment = 2
+uppercase = true
+
+[node name="score_val" type="Label" parent="Score_Control2/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_3lopq")
+theme_override_font_sizes/font_size = 22
+text = "0000"
+horizontal_alignment = 2
+
+[node name="Title" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Title"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -237.5
+offset_right = 237.5
+offset_bottom = 297.0
+grow_horizontal = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Title/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/margin_top = 60
+
+[node name="Label" type="Label" parent="Title/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 0.815686, 1)
+theme_override_fonts/font = ExtResource("2_gxnlu")
+theme_override_font_sizes/font_size = 170
+text = "Snake"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="Title/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/margin_top = -40
+theme_override_constants/margin_bottom = 50
+
+[node name="Label2" type="Label" parent="Title/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0.815686, 1)
+theme_override_fonts/font = ExtResource("3_hn0bu")
+theme_override_font_sizes/font_size = 130
+text = "3D"
+horizontal_alignment = 1
